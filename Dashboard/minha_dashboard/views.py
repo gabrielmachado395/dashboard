@@ -101,7 +101,7 @@ def relatorio_funcionario(request):
     x.sort(key=lambda x: x[1], reverse=True)
     x = list(zip(*x))
     
-    return JsonResponse({'labels': x[0][:3], 'data': x[1][:3]})
+    return JsonResponse({'labels': x[0][:4], 'data': x[1][:4]})
 
 def relatorio_produtos(request):
     produtos = Produto.objects.all()
