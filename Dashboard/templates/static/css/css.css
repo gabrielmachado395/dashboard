@@ -58,3 +58,134 @@ footer a {
     width: 100% !important; /* Assegura que o gráfico ocupe 100% da largura do contêiner */
     height: 80% !important; /* Assegura que o gráfico ocupe 100% da altura do contêiner */
 }
+
+/* Estilo da barra lateral padrão */
+nav.menu-lateral {
+    width: 80px;
+    height: 100%;
+    background-color: #202020;
+    padding: 40px 0 40px 1%;
+    box-shadow: 3px 0 0 #72A0C1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    transition: .2s;
+    z-index: 1000;
+}
+
+/* Estilo da barra lateral expandida */
+nav.menu-lateral.expandir {
+    width: 300px;
+}
+
+/* Botão de expandir */
+.btn-expandir {
+    width: 100%;
+}
+
+/* Ícone do botão de expandir  */
+.btn-expandir > i {
+    color: #fff;
+    font-size: 50px;
+    cursor: pointer;
+    margin-left: 4px;
+}
+
+/* Lista de navegação */
+ul {
+    height: 100%;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul li.item-menu {
+    transition: .2s;
+}
+
+ul li.item-menu:hover {
+    background: #72A0C1;
+}
+
+ul li.item-menu a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 20px 4%;
+    display: flex;
+    margin-bottom: 20px;
+    line-height: 40px;
+}
+
+/* Texto do link na barra lateral */
+ul li.item-menu a .txt-link {
+    margin-left: 50px;
+    transition: 1s;
+    opacity: 0;
+}
+
+ul li.item-menu a .icon > i {
+    font-size: 30px;
+    margin-left: 10px;
+}
+
+/* Texto visível quando a barra lateral está expandida */
+nav.menu-lateral.expandir .txt-link {
+    margin-left: 20px;
+    opacity: 1;
+}
+
+/* Estilo do item ativo */
+ul li.ativo {
+    background-color: #72A0C1;
+}
+
+/* Responsividade para dispositivos menores */
+@media screen and (max-width: 768px) {
+    nav.menu-lateral {
+        width: 0;
+        padding: 0;
+        box-shadow: none;
+    }
+
+    nav.menu-lateral.expandir {
+        width: 100%;
+        padding: 20px;
+        box-shadow: 3px 0 0 #72A0C1;
+    }
+
+    /* Ajuste para que os ícones se alinhem ao centro em telas menores */
+    ul li.item-menu a .icon > i {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    ul li.item-menu a {
+        justify-content: center;
+    }
+
+    ul li.item-menu a .txt-link {
+        display: none;
+    }
+
+    /* Quando expandido, mostra o texto do link */
+    nav.menu-lateral.expandir ul li.item-menu a .txt-link {
+        display: inline-block;
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .btn-expandir > i {
+        font-size: 40px;
+    }
+
+    ul li.item-menu a {
+        font-size: 18px;
+    }
+
+    ul li.item-menu a .icon > i {
+        font-size: 25px;
+    }
+}
